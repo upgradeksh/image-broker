@@ -1,0 +1,46 @@
+---
+sync:
+  src_root: /data/isilon/current
+  dst_root: /data/isilon/image
+
+inotifywait:
+  events:  [ CLOSE_WRITE ]
+  exclude: [ '\.wspx?\$' ]
+
+gearman:
+  host: 127.0.0.1
+  pidfile: /var/run/gearmand.pid
+  daemonize: 1
+  worker: 8
+
+slack:
+  proxy:
+  channel:
+  token:
+  user:
+  attachments:
+    fallback: 'Required plain-text summary of the attachment.'
+    color: 'danger'
+    pretext: 'Optional text that appears above the attachment block'
+
+    author_name: 'John Kang'
+
+    title: 'Slack API Documentation'
+    title_link: 'https://api.slack.com/'
+
+    text: 'Optional text that appears within the attachment'
+
+    fields: 
+      - title: 'Priority'
+        value: 'High'
+        short: 'Types::Serialiser::true'
+      - title: 'in charge of'
+        value: 'John Kang'
+        short: 'Types::Serialiser::false'
+      - title: 'date'
+        value: '2015-01-11 23:44:12'
+        short: 'Types::Serialiser::false'
+
+    image_url: 'http://my-website.com/path/to/image.jpg'
+    thumb_url: 'http://example.com/path/to/thumb.png'
+...

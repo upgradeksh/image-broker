@@ -1,0 +1,19 @@
+ln -sfT upload/20160423 current
+ - s : symbolic
+ - f : delete existing target
+ - T : treat target as file
+
+register schedule
+ - make symlink forcely
+ - monitoring
+   - daemon
+   - worker
+
+logging
+ - logrotate
+
+init-script
+
+name change
+ client => broker
+
